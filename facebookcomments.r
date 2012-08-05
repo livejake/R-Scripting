@@ -7,7 +7,8 @@
  # Returns json from url of Json 
  
  get.json.from.url <- function(url){
- raw.data <- getURL(url,cainfo = "/Users/jakebialer/Desktop/cacert.pem")	
+ # Need certificate for https downloading
+ raw.data <- getURL(url,cainfo = "http://curl.haxx.se/ca/cacert.pem")	
  res <- fromJSON(raw.data)
  return(res)	
  }
